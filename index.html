@@ -1,0 +1,1256 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Öz Yarka Tavukçuluk & Kümes Ekipmanları</title>
+    
+    <!-- Montserrat Font from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!-- Bootstrap CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <!-- AOS CSS -->
+    <link href="css/aos.css" rel="stylesheet">
+    <!-- Custom CSS -->
+
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        /* Style for the title */
+        h1, h2, h3 {
+        font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Style for the bullet points (unordered list) */
+        ul {
+        font-family: 'Inter', sans-serif;
+        }
+
+        section {
+            padding: 60px 0;
+        }
+
+        /* Navbar Style */
+        .navbar {
+            position: fixed;
+            width: 100%;
+            z-index: 1000;
+        }
+        
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+        }
+        
+        .navbar-brand img {
+            width: 40px;
+            height: auto;
+            margin-right: 8px;
+        }
+
+        .navbar-brand span {
+            font-weight: 700;
+            font-size: 1.2rem;
+        }
+
+        /* Home Section */
+        #home {
+            background-color: #f8f9fa; /* Hafif bir arka plan rengi */
+            color: #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: left;
+            position: relative;
+            overflow: hidden;
+            padding: 60px 0;
+        }
+
+        /* Container İçindeki Flex Düzeni */
+        #home .home-content {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        /* Metin Bölümü */
+        #home .home-text {
+            flex: 1 1 500px;
+            padding: 20px;
+        }
+
+        #home .home-text h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        #home .home-text p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Soru ve Cevap Bölümü */
+        #home .home-qa {
+            margin-top: 30px;
+        }
+
+        #home .home-qa h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        #home .home-qa p {
+            font-size: 1rem;
+            margin-bottom: 20px;
+            line-height: 1.6;
+        }
+
+        /* Hizmetler Bölümü */
+        #home .home-services {
+            margin-top: 30px;
+        }
+
+        #home .home-services h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+        }
+
+        #home .home-services ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        #home .home-services ul li {
+            font-size: 1rem;
+            margin-bottom: 10px;
+            padding-left: 20px;
+            position: relative;
+        }
+
+        #home .home-services ul li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #041425;
+            font-size: 1rem;
+            top: 0;
+            line-height: 1;
+        }
+
+        /* Görsel Bölümü */
+        #home .home-images {
+            flex: 1 1 400px;
+            padding: 20px;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        #home .home-images .image-stack {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            max-width: 400px; /* Görsellerin maksimum genişliği */
+        }
+
+        /* Üst Üste Gelmiş Görseller */
+        #home .home-images .image-stack img {
+            position: absolute;
+            width: 80%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* İlk Görsel */
+        #home .home-images .image-stack img:nth-child(1) {
+            top: 0;
+            left: 0;
+            z-index: 3;
+            transform: rotate(-5deg);
+        }
+
+        /* İkinci Görsel */
+        #home .home-images .image-stack img:nth-child(2) {
+            top: 10px;
+            left: 20px;
+            z-index: 2;
+            transform: rotate(5deg);
+        }
+
+        /* Üçüncü Görsel */
+        #home .home-images .image-stack img:nth-child(3) {
+            top: 20px;
+            left: 40px;
+            z-index: 1;
+            transform: rotate(-5deg);
+        }
+
+        /* Hover Efektleri */
+        #home .home-images .image-stack img:hover {
+            transform: scale(1.05);
+            z-index: 4; /* Hover durumunda üstte görünür */
+        }
+
+        /* Button Style */
+        .btn-primary {
+            background-color: #041425; /* Buton rengi */
+            border-color: #041425; /* Buton border rengi */
+        }
+
+        .btn-primary:hover {
+            background-color: #bfafab; /* Hover buton rengi */
+            border-color: #bfafab; /* Hover border rengi */
+        }
+
+        /* Kapat Button Style */
+        .btn-secondary {
+            background-color: #041425; /* Buton rengi */
+            border-color: #041425; /* Buton border rengi */
+        }
+
+        .btn-secondary:hover {
+            background-color: #bfafab; /* Hover buton rengi */
+            border-color: #bfafab; /* Hover border rengi */
+        }
+
+        /* Footer Style */
+        footer {
+            background-color: #343a40;
+            color: white;
+        }
+
+        /* Modal Image and Text Styling */
+        #productModal .modal-body {
+            max-height: 70vh; /* Modal içeriği yüksekliği */
+            overflow-y: auto; /* Taşan içeriklerde kaydırma */
+        }
+
+        /* Gallery Carousel Styling */
+        .carousel-item img {
+            width: 100%;
+            height: auto;
+            max-height: 70vh;
+            object-fit: cover;
+        }
+
+        /* Customize Carousel Controls */
+        .carousel-control-prev,
+        .carousel-control-next {
+            width: 50px;
+            height: 50px;
+            background-color: rgba(4, 20, 37, 0.7); /* Semi-transparent dark background */
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .carousel-control-prev:hover,
+        .carousel-control-next:hover {
+            background-color: rgba(4, 20, 37, 0.9); /* Darker on hover */
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            background-size: 20px 20px;
+        }
+
+        /* Adjust Carousel Controls Position */
+        .carousel-control-prev {
+            left: -25px; /* Sol dışa taş */
+        }
+
+        .carousel-control-next {
+            right: -25px; /* Sağ dışa taş */
+        }
+
+        /* Ensure the modal image scales without overflowing horizontally or vertically */
+        .modal-dialog-centered {
+            max-width: 90vw;
+            max-height: 90vh; /* Modal yüksekliği limiti */
+        }
+    
+        .modal-body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+    
+        .modal-body img {
+            max-width: 100%;
+            max-height: 80vh; /* Modal içerisindeki resim yüksekliği limiti */
+            height: auto;
+            width: auto;
+        }
+
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            /* Home başlık ve paragraf boyutları */
+            #home h1 {
+                font-size: 2.5rem;
+            }
+
+            #home p {
+                font-size: 1rem;
+            }
+
+            /* Home logo boyutu */
+            #home .home-logo img {
+                width: 80px;
+            }
+
+            /* Mobilde home içeriği dikey hizalanır */
+            #home .home-content {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            #home .home-images {
+                margin-top: 40px;
+            }
+
+            #home .home-qa,
+            #home .home-services {
+                text-align: left;
+            }
+
+            #home .home-services ul li::before {
+                left: 10px;
+            }
+
+            /* Overlay text boyutu */
+            .overlay-text {
+                font-size: 1rem;
+            }
+        }
+
+        /* Hizmetler Listesi İkon Ayarı */
+        #home .home-services ul li::before {
+            content: '✔';
+            position: absolute;
+            left: 0;
+            color: #041425;
+            font-size: 1rem;
+            line-height: 1;
+        }
+
+        /* Product Image Styling */
+        .product-image {
+            width: 100%;
+            height: 200px; /* Fixed height for all product images */
+            object-fit: cover; /* Ensures images cover the area without distortion */
+        }
+
+        /* Gallery Image Styling */
+        .gallery-link img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+                    <!-- <img src="assets/images/logo.jpg" alt="Logo"> -->
+                    <span>Öz Yarka Tavukçuluk</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" 
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link active" id="nav-home" aria-current="page" href="#home">Ana Sayfa</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-products" href="#products">Yarkalarımız</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-cadir" href="#cadir">Kümeslerimiz</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-gallery" href="#gallery">Galeri</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-references" href="#references">Referanslarımız</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-about" href="#about">Hakkımızda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="nav-contact" href="#contact">İletişim</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <style>
+        .navbar-nav .nav-item:not(:last-child) .nav-link {
+            border-right: 1px solid rgba(255, 255, 255, 0.1);
+            padding-right: 15px;
+        }
+        .navbar-nav .nav-item:not(:first-child) .nav-link {
+            padding-left: 15px;
+        }
+    </style>
+
+    <!-- Home Section -->
+    <section id="home">
+        <div class="container home-content">
+            <!-- Metin Bölümü -->
+            <div class="row align-items-center">
+                <div class="col-md-6 home-text" data-aos="fade-right">
+                    <!-- Soru ve Cevap Bölümü -->
+                    <div class="home-qa p-4 bg-light rounded shadow-lg">
+                        <h1 class="display-4" style="color: #000000; font-weight: bold;">Kendi işinizin patronu olmak ister misiniz?</h1>
+                        <ul>
+                            <li style="color: #3d4246;">81 ile müşterilerimizin çadır kümesini kurup gerekli ekipmanlarını veriyoruz.</li>
+                            <li style="color: #3d4246;">Hangi bölgede ise uygun tavuk cinsi önerip A’dan Z’ye kurulumunu gerçekleştirmekteyiz.</li>
+                            <li style="color: #3d4246;">Hatta müşterilerimizin 2. ve 3. kümeslerini kurmasına destek verip yumurta işinde gelişmeleri ve kazanmaları için her konuda destek sağlıyoruz.</li>
+                        </ul>
+                    </div>  
+                </div>
+
+                <div class="col-md-6" data-aos="fade-left">
+                    <!-- Fixed Size Carousel -->
+                    <div id="fixedSizeCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="2000">
+                        <div class="carousel-inner">
+                            <div class="carousel-item active">
+                                <img src="assets/images/cadir3.jpg" class="d-block w-100" alt="Çadır Kümes Kurulumu">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/sistem5.jpg" class="d-block w-100" alt="Ekipman Kurulumu">
+                            </div>
+                            <div class="carousel-item">
+                                <img src="assets/images/tavuk7.jpg" class="d-block w-100" alt="Yarka ve Tavuk Satışı">
+                            </div>
+                        </div>
+                        <button class="carousel-control-prev carousel-control" type="button" data-bs-target="#fixedSizeCarousel" data-bs-slide="prev">
+                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Previous</span>
+                        </button>
+                        <button class="carousel-control-next carousel-control" type="button" data-bs-target="#fixedSizeCarousel" data-bs-slide="next">
+                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span class="visually-hidden">Next</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <style>
+                #fixedSizeCarousel {
+                    position: relative;
+                    width: 100%;
+                    max-width: 600px;
+                    margin: 0 auto;
+                    border-radius: 10px;
+                }
+
+                #fixedSizeCarousel .carousel-inner {
+                    position: relative;
+                    width: 100%;
+                    height: 300px;
+                    border-radius: 10px;
+                    overflow: hidden;
+                }
+
+                #fixedSizeCarousel .carousel-item {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                #fixedSizeCarousel .carousel-item img {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: cover;
+                    transition: transform 0.3s ease-in-out;
+                }
+
+                /* Control buttons styling */
+                #fixedSizeCarousel .carousel-control {
+                    position: absolute;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    width: 40px;
+                    height: 40px;
+                    background-color: rgba(0, 0, 0, 0.5);
+                    border-radius: 50%;
+                    opacity: 0.8;
+                    border: 2px solid white;
+                    z-index: 10;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    cursor: pointer;
+                }
+
+                #fixedSizeCarousel .carousel-control:hover {
+                    background-color: rgba(0, 0, 0, 0.8);
+                    opacity: 1;
+                }
+
+                #fixedSizeCarousel .carousel-control-prev {
+                    left: 10px;
+                }
+
+                #fixedSizeCarousel .carousel-control-next {
+                    right: 10px;
+                }
+
+                #fixedSizeCarousel .carousel-control-prev-icon,
+                #fixedSizeCarousel .carousel-control-next-icon {
+                    width: 20px;
+                    height: 20px;
+                    background-size: 100%;
+                }
+
+                /* Fix transition expansion issue */
+                #fixedSizeCarousel .carousel-item.active,
+                #fixedSizeCarousel .carousel-item-next,
+                #fixedSizeCarousel .carousel-item-prev {
+                    display: block;
+                    transition: transform 0.6s ease-in-out;
+                }
+
+                /* Responsive adjustments */
+                @media (max-width: 768px) {
+                    #fixedSizeCarousel {
+                        max-width: 100%;
+                    }
+
+                    #fixedSizeCarousel .carousel-inner {
+                        height: 250px;
+                    }
+
+                    #fixedSizeCarousel .carousel-control {
+                        width: 35px;
+                        height: 35px;
+                    }
+
+                    #fixedSizeCarousel .carousel-control-prev-icon,
+                    #fixedSizeCarousel .carousel-control-next-icon {
+                        width: 15px;
+                        height: 15px;
+                    }
+                }
+            </style>
+        </div>
+    </section>
+
+    <section id="hizmetlerimiz" class="bg-light py-5">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif; font-weight: bold; color: #333;">Hizmetlerimiz</h2>
+            <div class="row d-flex flex-wrap justify-content-center text-center">
+                <div class="col-md-3 service-box" data-aos="fade-right">
+                    <img src="assets/icons/cadir.svg" alt="Çadır" style="width: 40px;">
+                    <h3>Çadır Kümes Kurulumu</h3>
+                </div>
+                <div class="col-md-3 service-box" data-aos="fade-left">
+                    <img src="assets/icons/sistem.svg" alt="Ekipman" style="width: 40px;">
+                    <h3>Ekipman Kurulumu</h3>
+                </div>
+                <div class="col-md-3 service-box" data-aos="fade-right">
+                    <img src="assets/icons/tavuk.svg" alt="Tavuk" style="width: 40px;">
+                    <h3>Yarka ve Tavuk Satışı</h3>
+                </div>
+                <div class="col-md-3 service-box" data-aos="fade-right">
+                    <img src="assets/icons/veteriner.svg" alt="veteriner" style="width: 40px;">
+                    <h3>Ücretsiz Veterinerlik Hizmeti</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+
+    <!-- Products Section -->
+    <section id="products" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif; font-weight: bold; color: #333;">Yarkalarımız</h2>
+            
+            <!-- First Row - 3 items -->
+            <div class="row justify-content-center mb-4">
+                <!-- Product Card 1 -->
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card mb-4">
+                        <img src="assets/images/tavuk1.jpg" class="card-img-top product-image" alt="Product 1">
+                        <div class="card-body">
+                            <h5 class="card-title">TINTED CORAL</h5>
+                            <!-- <p class="card-text">Ürün 1 açıklaması.</p> -->
+                            <a href="#" class="btn btn-primary" 
+                               data-bs-toggle="modal" 
+                               data-bs-target="#productModal"
+                               data-title="TINTED CORAL"
+                               data-image="assets/images/tavuk1.jpg"
+                               data-description="  • Beyaz renkli olup siyah çizgi tüylere sahiptir.<br>
+                                                   • Her iklime uygundur.<br>
+                                                   • Senelik yumurta verimi 340 adete kadar yükselebilmektedir.<br>
+                                                   • 20. haftasında ilk yumurtalarını yapmaya başlarlar.<br>
+                                                   • Yumurta rengi kremdir.<br>
+                                                   • Müşteri kümeslerimize teslimatları ortalama 16. haftasında son 4'lü karma aşısı yapıldıktan sonra gerçekleşir.">Detaylar</a>
+
+
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 2 -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card mb-4">
+                        <img src="assets/images/tavuk2.jpg" class="card-img-top product-image" alt="Product 2">
+                        <div class="card-body">
+                            <h5 class="card-title">LOHMAN BROWN</h5>
+                            <!-- <p class="card-text">Ürün 2 açıklaması.</p> -->
+                            <a href="#" class="btn btn-primary" 
+                               data-bs-toggle="modal" 
+                               data-bs-target="#productModal"
+                               data-title="LOHMAN BROWN"
+                               data-image="assets/images/tavuk2.jpg"
+                               data-description="Bu, Ürün 2'nin detaylı açıklamasıdır. Ürünün özellikleri, boyutları ve diğer bilgiler burada yer alabilir.">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 3 -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="card mb-4">
+                        <img src="assets/images/tavuk3.jpg" class="card-img-top product-image" alt="Product 3">
+                        <div class="card-body">
+                            <h5 class="card-title">LOHMAN SANDY</h5>
+                            <!-- <p class="card-text">Ürün 3 açıklaması.</p> -->
+                            <a href="#" class="btn btn-primary" 
+                               data-bs-toggle="modal" 
+                               data-bs-target="#productModal"
+                               data-title="LOHMAN SANDY"
+                               data-image="assets/images/tavuk3.jpg"
+                               data-description="Bu, Ürün 3'ün detaylı açıklamasıdır. Ürünün özellikleri, boyutları ve diğer bilgiler burada yer alabilir.">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Second Row - centered items -->
+            <div class="row justify-content-center">
+                <!-- Product Card 4 -->
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card mb-4">
+                        <img src="assets/images/tavuk4.jpg" class="card-img-top product-image" alt="Product 3">
+                        <div class="card-body">
+                            <h5 class="card-title">ATAK-S</h5>
+                            <!-- <p class="card-text">Ürün 3 açıklaması.</p> -->
+                            <a href="#" class="btn btn-primary" 
+                               data-bs-toggle="modal" 
+                               data-bs-target="#productModal"
+                               data-title="ATAK-S"
+                               data-image="assets/images/tavuk4.jpg"
+                               data-description="Bu, Ürün 3'ün detaylı açıklamasıdır. Ürünün özellikleri, boyutları ve diğer bilgiler burada yer alabilir.">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Single Modal -->
+        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModalLabel">Ürün Başlığı</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img src="" id="productModalImage" class="img-fluid" alt="Product Image" style="max-height: 70vh; object-fit: contain;">
+                        </div>
+                        <p class="mt-3" id="productModalDescription">Ürün açıklaması burada yer alacak.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .product-image {
+            width: 100%;
+            height: 200px; /* Fixed height for all product images */
+            object-fit: cover; /* Ensures images cover the area without distortion */
+        }
+    </style>
+
+    <!-- Cadir Section -->
+    <section id="cadir" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif; font-weight: bold; color: #333;">Çadır Kümeslerimiz</h2>
+            <div class="row justify-content-center">
+                <!-- Product Card 1 -->
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card mb-4">
+                        <img src="assets/images/urun1.jpg" class="card-img-top product-image" alt="Product 1">
+                        <div class="card-body">
+                            <h5 class="card-title">2.000 ADET KAPASİTELİ ÇADIR KÜMES PAKETİMİZ</h5>
+                            <!-- <p class="card-text">Ürün 1 açıklaması.</p> -->
+                            <a href="#" class="btn btn-primary" 
+                               data-bs-toggle="modal" 
+                               data-bs-target="#productModal"
+                               data-title="2.000 ADET KAPASİTELİ ÇADIR KÜMES PAKETİMİZ"
+                               data-image="assets/images/urun1.jpg"
+                               data-description="• Kapasite: 2.000 adet tavuk<br>
+                                                • Çadır boyutları: 10x25 metre<br>
+                                                • Otomatik yemleme sistemi dahil<br>
+                                                • Sulama sistemi dahil<br>
+                                                • Hava sirkülasyon sistemi dahil<br>
+                                                • 5 yıl garanti süresi<br>
+                                                • A’dan Z’ye kurulum hizmeti">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+                
+
+                <!-- Product Card 2 -->
+                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="card mb-4">
+                        <img src="assets/images/urun2.jpg" class="card-img-top product-image" alt="Product 2">
+                        <div class="card-body">
+                            <h5 class="card-title">4.000 ADET KAPASİTELİ ÇADIR KÜMES PAKETİMİZ</h5>
+                            <!-- <p class="card-text">Ürün 2 açıklaması.</p> -->
+                            <a href="#" class="btn btn-primary" 
+                               data-bs-toggle="modal" 
+                               data-bs-target="#productModal"
+                               data-title="4.000 ADET KAPASİTELİ ÇADIR KÜMES PAKETİMİZ"
+                               data-image="assets/images/urun2.jpg"
+                               data-description="Bu, Ürün 2'nin detaylı açıklamasıdır. Ürünün özellikleri, boyutları ve diğer bilgiler burada yer alabilir.">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <!-- Single Modal -->
+        <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg modal-dialog-scrollable">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="productModalLabel">Ürün Başlığı</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                    </div>
+                    <div class="modal-body">
+                        <div class="text-center">
+                            <img src="" id="productModalImage" class="img-fluid" alt="Product Image" style="max-height: 70vh; object-fit: contain;">
+                        </div>
+                        <p class="mt-3" id="productModalDescription">Ürün açıklaması burada yer alacak.</p>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .product-image {
+            width: 100%;
+            height: 200px; /* Fixed height for all product images */
+            object-fit: cover; /* Ensures images cover the area without distortion */
+        }
+    </style>
+
+    <!-- Gallery Section -->
+    <section id="gallery">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif; font-weight: bold; color: #333;">Galeri</h2>
+            
+            <!-- Desktop Carousel (Visible on md and larger screens) -->
+            <div id="galleryCarouselDesktop" class="carousel slide d-none d-md-block" data-bs-ride="carousel" data-aos="fade-up">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <!-- Gallery Image 1 -->
+                            <div class="col-md-4 mb-4">
+                                <a href="assets/images/galeri1.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                                    <img src="assets/images/galeri1.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 1">
+                                </a>
+                            </div>
+                            <!-- Gallery Image 2 -->
+                            <div class="col-md-4 mb-4">
+                                <a href="assets/images/galeri2.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                                    <img src="assets/images/galeri2.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 2">
+                                </a>
+                            </div>
+                            <!-- Gallery Image 3 -->
+                            <div class="col-md-4 mb-4">
+                                <a href="assets/images/galeri3.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                                    <img src="assets/images/galeri3.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 3">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <!-- Gallery Image 4 -->
+                            <div class="col-md-4 mb-4">
+                                <a href="assets/images/galeri4.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                                    <img src="assets/images/galeri4.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 4">
+                                </a>
+                            </div>
+                            <!-- Gallery Image 5 -->
+                            <div class="col-md-4 mb-4">
+                                <a href="assets/images/galeri5.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                                    <img src="assets/images/galeri5.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 5">
+                                </a>
+                            </div>
+                            <!-- Gallery Image 6 -->
+                            <div class="col-md-4 mb-4">
+                                <a href="assets/images/galeri6.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                                    <img src="assets/images/galeri6.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 6">
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Add more carousel items as needed -->
+                </div>
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev carousel-control" type="button" data-bs-target="#galleryCarouselDesktop" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Önceki</span>
+                </button>
+                <button class="carousel-control-next carousel-control" type="button" data-bs-target="#galleryCarouselDesktop" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Sonraki</span>
+                </button>
+            </div>
+            
+            <!-- Mobile Carousel (Visible on sm and smaller screens) -->
+            <div id="galleryCarouselMobile" class="carousel slide d-block d-md-none" data-bs-ride="carousel" data-aos="fade-up">
+                <div class="carousel-inner">
+                    <!-- Gallery Image 1 -->
+                    <div class="carousel-item active">
+                        <a href="assets/images/galeri1.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                            <img src="assets/images/galeri1.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 1">
+                        </a>
+                    </div>
+                    <!-- Gallery Image 2 -->
+                    <div class="carousel-item">
+                        <a href="assets/images/galeri2.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                            <img src="assets/images/galeri2.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 2">
+                        </a>
+                    </div>
+                    <!-- Gallery Image 3 -->
+                    <div class="carousel-item">
+                        <a href="assets/images/galeri3.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                            <img src="assets/images/galeri3.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 3">
+                        </a>
+                    </div>
+                    <!-- Gallery Image 4 -->
+                    <div class="carousel-item">
+                        <a href="assets/images/galeri4.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                            <img src="assets/images/galeri4.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 4">
+                        </a>
+                    </div>
+                    <!-- Gallery Image 5 -->
+                    <div class="carousel-item">
+                        <a href="assets/images/galeri5.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                            <img src="assets/images/galeri5.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 5">
+                        </a>
+                    </div>
+                    <!-- Gallery Image 6 -->
+                    <div class="carousel-item">
+                        <a href="assets/images/galeri6.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
+                            <img src="assets/images/galeri6.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 6">
+                        </a>
+                    </div>
+                    <!-- Add more carousel items as needed -->
+                </div>
+                <!-- Carousel Controls -->
+                <button class="carousel-control-prev carousel-control" type="button" data-bs-target="#galleryCarouselMobile" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Önceki</span>
+                </button>
+                <button class="carousel-control-next carousel-control" type="button" data-bs-target="#galleryCarouselMobile" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Sonraki</span>
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        /* Gallery Section Styles */
+        #galleryCarouselDesktop,
+        #galleryCarouselMobile {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+
+        #galleryCarouselDesktop .carousel-inner,
+        #galleryCarouselMobile .carousel-inner {
+            position: relative;
+            width: 100%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        #galleryCarouselDesktop .carousel-item,
+        #galleryCarouselMobile .carousel-item {
+            position: relative;
+            width: 100%;
+        }
+
+        #galleryCarouselDesktop .carousel-item img,
+        #galleryCarouselMobile .carousel-item img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        /* Control buttons styling */
+        .carousel-control {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 50%;
+            opacity: 0.8;
+            border: 2px solid white;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .carousel-control:hover {
+            background-color: rgba(0, 0, 0, 0.8);
+            opacity: 1;
+        }
+
+        .carousel-control-prev {
+            left: 10px;
+        }
+
+        .carousel-control-next {
+            right: 10px;
+        }
+
+        .carousel-control-prev-icon,
+        .carousel-control-next-icon {
+            width: 20px;
+            height: 20px;
+            background-size: 100%;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+
+        /* Override Bootstrap default icons if needed */
+        .carousel-control-prev-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23ffffff" viewBox="0 0 8 8"%3E%3Cpath d="M5.5 0L4.207 1.293 6.414 3.5H0v1h6.414L4.207 6.707 5.5 8l4-4-4-4z"/%3E%3C/svg%3E');
+        }
+
+        .carousel-control-next-icon {
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23ffffff" viewBox="0 0 8 8"%3E%3Cpath d="M2.5 0L1.207 1.293 3.414 3.5H0v1h3.414L1.207 6.707 2.5 8l4-4-4-4z"/%3E%3C/svg%3E');
+        }
+
+        /* Responsive adjustments for both carousels */
+        @media (max-width: 768px) {
+            #galleryCarouselDesktop {
+                display: none;
+            }
+
+            #galleryCarouselMobile {
+                max-width: 100%;
+            }
+
+            .carousel-control {
+                width: 35px;
+                height: 35px;
+            }
+
+            .carousel-control-prev-icon,
+            .carousel-control-next-icon {
+                width: 15px;
+                height: 15px;
+            }
+        }
+    </style>
+
+    <!-- Image Modal -->
+    <div class="modal fade" id="imageModal" tabindex="-1" aria-labelledby="imageModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <img src="" class="img-fluid" id="modalImage" alt="Gallery Image">
+                </div>
+                <button type="button" class="btn-close position-absolute top-0 end-0 m-3" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- References Section -->
+    <section id="references" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif; font-weight: bold; color: #333;">Referanslarımız</h2>
+            <!-- Video References -->
+            <div class="row mt-5">
+                <!-- Video 1 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up">
+                    <h5 style="text-align: center; font-weight: bold;">Adana</h5>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/M2uSXU3URLo" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Video 2 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <h5 style="text-align: center; font-weight: bold;">İzmir</h5>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/PHttW-8OZrs" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Video 3 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <h5 style="text-align: center; font-weight: bold;">Denizli</h5>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/0CyLIAOLRew" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Video 4 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <h5 style="text-align: center; font-weight: bold;">Sakarya</h5>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/6IAwARPTx1c" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Video 5 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up">
+                    <h5 style="text-align: center; font-weight: bold;">İzmir</h5>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/vyH_Lxehfww" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Video 6 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <h5 style="text-align: center; font-weight: bold;">İzmir</h5>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/KP9hCHNmXsI" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Video 7 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="200">
+                    <h5 style="text-align: center; font-weight: bold;">İzmir</h5>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/2qMp1Ztf5ic" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <!-- Video 8 -->
+                <div class="col-lg-3 col-md-4 col-sm-6 mb-4" data-aos="fade-up" data-aos-delay="300">
+                    <h5 style="text-align: center; font-weight: bold;">Sakarya</h5>
+                    <div class="ratio ratio-16x9">
+                        <iframe src="https://www.youtube.com/embed/aFgddYEaMgQ" title="YouTube video" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Us Section -->
+    <section id="about">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif; font-weight: bold; color: #333;">
+                Hakkımızda
+            </h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-right">
+                    <div class="home-qa p-4 bg-light rounded shadow-lg">
+                        <h3 class="display-6" style="color: #000000; font-weight: bold;">Firmamızın Özellikleri</h3>
+                        <ul>
+                            <li style="color: #3d4246;">
+                                Uzun yıllardır sektörde faaliyet gösteren, müşteri memnuniyeti yüksek üretici bir firmayız.
+                            </li>
+                            <li style="color: #3d4246;">
+                                Müşterilerimizi yumurta üretiminden pazar oluşumuna kadar A'dan Z'ye takip ediyoruz.
+                            </li>
+                            <li style="color: #3d4246;">
+                                Yarkalarımız kesinlikle 1. kan orijinal ve yumurtacı ırktır.
+                            </li>
+                            <li style="color: #3d4246;">
+                                Firmamız devlet kontrolü altında olup tamamen ziraat onaylıdır ve hibe destekleri için uygundur.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6" data-aos="fade-left">
+                    <div class="home-qa p-4 bg-light rounded shadow-lg">
+                        <h3 class="display-6" style="color: #000000; font-weight: bold;">Ürün ve Hizmetlerimiz</h3>
+                        <ul>
+                            <li style="color: #3d4246;">
+                                Modern üretim tesislerimizde profesyonel veteriner hekimlerimizin kontrolünde yetişen (Atak-S, Lohman Sandy, Lohman Brown, Isa Tinted, Tinted Coral) yarkalarımızı müşterilerimize aşı belgeleri ve sözleşmeleri ile teslim ediyoruz.
+                            </li>
+                            <li style="color: #3d4246;">
+                                Türkiye’nin her bölgesine uygun ırk belirleyerek ve kümes koşullarını sağlayarak tavuk teslimatı ve kümes kurulumu yapmaktayız.
+                            </li>
+                            <li style="color: #3d4246;">
+                                Uzman kümes kurulum ekiplerimiz, veteriner hekimlerimiz ve satış temsilcilerimizle müşterilerimize kapsamlı destek sağlıyoruz.
+                            </li>
+                            <li style="color: #3d4246;">
+                                Sosyal medya hesaplarımız üzerinden yapılan paylaşımlar ile sektördeki tek tescilli firmalardan biriyiz.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Neden Öz Yarka Bölümü -->
+            <div class="row mt-5">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="home-qa p-4 bg-light rounded shadow-lg">
+                        <h3 class="display-6" style="color: #000000; font-weight: bold;">PEKİ NEDEN? ÖZ YARKA</h3>
+                        <ul>
+                            <li style="color: #3d4246;">
+                                Öz Yarka Tavukçuluk ve Kümes Kurulumu olarak sektörde en çok müşteri potansiyeline sahip referansa sahibiz.
+                            </li>
+                            <li style="color: #3d4246;">
+                                Hayvanlarımız tamamen kendi firmamızın ürettiği faturalı, belgeli ve bakanlık onaylıdır.
+                            </li>
+                            <li style="color: #3d4246;">
+                                Kümeslerimiz profesyonel ekiplerimiz tarafından tam bir tavuk evi niteliğinde imalatı yapılıp kuruluyor.
+                            </li>
+                            <li style="color: #3d4246;">
+                                Alanında profesyonel veteriner hekimlerimiz tarafından sürekli olarak müşteri kümesleri ziyaret edilip herhangi bir sorunda ücretsiz çözüme ulaştırılıyor.
+                            </li>
+                            <li style="color: #3d4246;">
+                                Ücretsiz olarak 3 ayda bir vitamin desteği ile tavuklarımızın bünyesini destekleyerek yumurta veriminin düşmesini engelliyoruz.
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- Sektörde Biz Bölümü -->
+            <div class="row mt-5">
+                <div class="col-12" data-aos="fade-up">
+                    <div class="home-qa p-4 bg-light rounded shadow-lg">
+                        <h3 class="display-6" style="color: #000000; font-weight: bold;">SEKTÖRDE BİZ</h3>
+                        <p style="color: #3d4246;">
+                            Firmamız uzun yıllardır sektörde olup Türkiye’nin her bölgesine tavuk teslimatı ve tavuk kümesi kurulumu yapmış olup, sayısız müşteri memnuniyetine sahiptir. Devlet kontrollü, ziraat onaylı, 200 bin kapasiteye sahip modern ve son derece profesyonel üretim tesislerimizde; uzman kümes kurulum ekipleri, veteriner hekimlerimiz, satış temsilcilerimiz ve üretime yardımcı olan birçok profesyonel ekiple Türkiye’nin her ilinde, ilçesinde ve köyünde üretimini yaptığımız yarkaların yumurtalarını alıp tüketiciye ulaştırıyoruz. Saygıdeğer müşterilerimizle birlikte Türkiye'nin tek tescilli markası olan büyük bir aileyiz.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Contact Section -->
+    <section id="contact" class="bg-light">
+        <div class="container">
+            <h2 class="text-center mb-5" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif; font-weight: bold; color: #333;">İletişim</h2>
+            <div class="row">
+                <div class="col-md-6" data-aos="fade-left">
+                    <h5>İletişim Bilgileri</h5>
+                    <p><strong>Adres:</strong> İzmir/FOÇA</p>
+                    <p><strong>Telefon:</strong> 0545 422 0435</p>
+                    <p><strong>E-posta:</strong> ozyarkatavukculuk@hotmail.com</p>
+                </div>
+                <div class="col-md-6 text-end" data-aos="fade-right">
+                    <h5>Sosyal Medya</h5>
+                    <a href="https://www.instagram.com/ozyarkatavukculuk/profilecard/?igsh=bnI2ZGZraWc3dDZ2" target="_blank">
+                        <img src="assets/icons/instagram.svg" alt="Instagram" style="width: 40px; margin-right: 10px;">
+                    </a>
+                    <a href="https://www.youtube.com" target="_blank">
+                        <img src="assets/icons/youtube.svg" alt="YouTube" style="width: 40px;">
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-center py-3">
+        &copy; 2024 Öz Yarka Tavukçuluk & Kümes Ekipmanları. Tüm hakları saklıdır.
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="js/bootstrap.bundle.min.js"></script>
+    <!-- AOS JS -->
+    <script src="js/aos.js"></script>
+    <!-- AOS Initialization -->
+    <script>
+        AOS.init({
+            duration: 1000,
+            once: true
+        });
+    </script>
+
+    <!-- Active Link Detection JavaScript -->
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            const sections = document.querySelectorAll("section");
+            const navLinks = {
+                home: document.getElementById("nav-home"),
+                products: document.getElementById("nav-products"),
+                cadir: document.getElementById("nav-cadir"),
+                gallery: document.getElementById("nav-gallery"),
+                references: document.getElementById("nav-references"),
+                about: document.getElementById("nav-about"),
+                contact: document.getElementById("nav-contact")
+            };
+
+            function updateActiveLink() {
+                let index = sections.length;
+                while (--index && window.scrollY + 150 < sections[index].offsetTop) {}
+                
+                Object.values(navLinks).forEach(link => link.classList.remove("active"));
+                const sectionId = sections[index].id;
+                navLinks[sectionId].classList.add("active");
+            }
+
+            window.addEventListener("scroll", updateActiveLink);
+        });
+    </script>
+
+    <!-- Modal Scripts -->
+    <script>
+        // Script for Product Modal
+        const productModal = document.getElementById('productModal');
+        productModal.addEventListener('show.bs.modal', function (event) {
+            const button = event.relatedTarget;
+            const title = button.getAttribute('data-title');
+            const image = button.getAttribute('data-image');
+            const description = button.getAttribute('data-description');
+
+            // Update modal content
+            document.getElementById('productModalLabel').textContent = title;
+            document.getElementById('productModalImage').src = image;
+            document.getElementById('productModalDescription').innerHTML = description;
+        });
+
+        // Script for Image Modal
+        document.addEventListener("DOMContentLoaded", function () {
+            const imageModal = document.getElementById('imageModal');
+            imageModal.addEventListener('show.bs.modal', function (event) {
+                const button = event.relatedTarget;
+                const imageUrl = button.getAttribute('href');
+                const modalImage = document.getElementById('modalImage');
+                modalImage.src = imageUrl;
+            });
+        });
+    </script>
+</body>
+</html>
