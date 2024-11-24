@@ -5,8 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Öz Yarka Tavukçuluk & Kümes Ekipmanları</title>
     
-    <!-- Montserrat Font from Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Montserrat, Inter, and Merriweather Fonts from Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Montserrat:wght@400;700&family=Merriweather:wght@400;700&display=swap" rel="stylesheet">
     
     <!-- Bootstrap CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
@@ -16,14 +16,21 @@
 
     <link href="css/style.css" rel="stylesheet">
     <style>
-        /* Style for the title */
+        /* Style for the titles */
         h1, h2, h3 {
-        font-family: 'Montserrat', sans-serif;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        /* Apply Merriweather to all list items */
+        ul li {
+            font-family: 'Merriweather', serif;
         }
 
         /* Style for the bullet points (unordered list) */
         ul {
-        font-family: 'Inter', sans-serif;
+            /* Retain Inter for other aspects if needed */
+            /* If you want to keep Inter for ul and Merriweather for li, keep this */
+            font-family: 'Inter', sans-serif;
         }
 
         section {
@@ -437,11 +444,19 @@
                             </div>
                         </div>
                         <button class="carousel-control-prev carousel-control" type="button" data-bs-target="#fixedSizeCarousel" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                            <span aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" viewBox="0 0 24 24">
+                                    <path d="M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+                                </svg>
+                            </span>
                             <span class="visually-hidden">Previous</span>
                         </button>
                         <button class="carousel-control-next carousel-control" type="button" data-bs-target="#fixedSizeCarousel" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                            <span aria-hidden="true">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" viewBox="0 0 24 24">
+                                    <path d="M8.59 16.58L13.17 12l-4.58-4.59L10 6l6 6-6 6z" />
+                                </svg>
+                            </span>
                             <span class="visually-hidden">Next</span>
                         </button>
                     </div>
@@ -523,6 +538,26 @@
                     display: block;
                     transition: transform 0.6s ease-in-out;
                 }
+                #fixedSizeCarousel .carousel-control {
+                    background-color: rgba(0, 0, 0, 0.8); /* Dark circular background */
+                    border: 2px solid white; /* Thin white border */
+                    border-radius: 50%; /* Circle shape */
+                    width: 50px;
+                    height: 50px;
+                }
+
+                #fixedSizeCarousel .carousel-control:hover {
+                    background-color: rgba(255, 255, 255, 0.8); /* White background on hover */
+                    color: black;
+                }
+
+                #fixedSizeCarousel .carousel-control svg {
+                    transition: transform 0.3s ease;
+                }
+
+                #fixedSizeCarousel .carousel-control:hover svg {
+                    transform: scale(1.2); /* Slightly larger arrow on hover */
+                }
 
                 /* Responsive adjustments */
                 @media (max-width: 768px) {
@@ -548,7 +583,16 @@
             </style>
         </div>
     </section>
-
+    <!-- Logo Section -->
+    <section id="logo" class="bg-light py-5">
+        <div class="container text-center">
+            <div class="card mx-auto" style="max-width: 600px; background-color: #041425; border-radius: 10px;">
+                <div class="card-body">
+                    <img src="assets/images/file.png" alt="Logo" class="img-fluid" style="max-width: 500px;">
+                </div>
+            </div>
+        </div>
+    </section>
     <section id="hizmetlerimiz" class="bg-light py-5">
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif; font-weight: bold; color: #333;">Hizmetlerimiz</h2>
@@ -572,7 +616,7 @@
             </div>
         </div>
     </section>
-    
+
 
     <!-- Products Section -->
     <section id="products" class="bg-light">
@@ -595,7 +639,7 @@
                                data-image="assets/images/tavuk1.jpg"
                                data-description="  • Beyaz renkli olup siyah çizgi tüylere sahiptir.<br>
                                                    • Her iklime uygundur.<br>
-                                                   • Senelik yumurta verimi 340 adete kadar yükselebilmektedir.<br>
+                                                   <p>• Senelik yumurta verimi 340 adete kadar yükselebilmektedir.</p>
                                                    • 20. haftasında ilk yumurtalarını yapmaya başlarlar.<br>
                                                    • Yumurta rengi kremdir.<br>
                                                    • Müşteri kümeslerimize teslimatları ortalama 16. haftasında son 4'lü karma aşısı yapıldıktan sonra gerçekleşir.">Detaylar</a>
@@ -689,6 +733,17 @@
             height: 200px; /* Fixed height for all product images */
             object-fit: cover; /* Ensures images cover the area without distortion */
         }
+        .modal-body {
+            padding: 20px; /* Adjust the padding as needed */
+
+        }
+
+        #productModalDescription {
+            margin-left: 15px; /* Add some space between the image and the description */
+            text-align: justify; /* Optional: improve text alignment */
+        }
+
+        
     </style>
 
     <!-- Cadir Section -->
@@ -775,221 +830,115 @@
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif; font-weight: bold; color: #333;">Galeri</h2>
             
-            <!-- Desktop Carousel (Visible on md and larger screens) -->
-            <div id="galleryCarouselDesktop" class="carousel slide d-none d-md-block" data-bs-ride="carousel" data-aos="fade-up">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <div class="row">
-                            <!-- Gallery Image 1 -->
-                            <div class="col-md-4 mb-4">
-                                <a href="assets/images/galeri1.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                                    <img src="assets/images/galeri1.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 1">
-                                </a>
-                            </div>
-                            <!-- Gallery Image 2 -->
-                            <div class="col-md-4 mb-4">
-                                <a href="assets/images/galeri2.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                                    <img src="assets/images/galeri2.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 2">
-                                </a>
-                            </div>
-                            <!-- Gallery Image 3 -->
-                            <div class="col-md-4 mb-4">
-                                <a href="assets/images/galeri3.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                                    <img src="assets/images/galeri3.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 3">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="carousel-item">
-                        <div class="row">
-                            <!-- Gallery Image 4 -->
-                            <div class="col-md-4 mb-4">
-                                <a href="assets/images/galeri4.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                                    <img src="assets/images/galeri4.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 4">
-                                </a>
-                            </div>
-                            <!-- Gallery Image 5 -->
-                            <div class="col-md-4 mb-4">
-                                <a href="assets/images/galeri5.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                                    <img src="assets/images/galeri5.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 5">
-                                </a>
-                            </div>
-                            <!-- Gallery Image 6 -->
-                            <div class="col-md-4 mb-4">
-                                <a href="assets/images/galeri6.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                                    <img src="assets/images/galeri6.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 6">
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                    <!-- Add more carousel items as needed -->
-                </div>
-                <!-- Carousel Controls -->
-                <button class="carousel-control-prev carousel-control" type="button" data-bs-target="#galleryCarouselDesktop" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Önceki</span>
-                </button>
-                <button class="carousel-control-next carousel-control" type="button" data-bs-target="#galleryCarouselDesktop" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Sonraki</span>
-                </button>
-            </div>
-            
-            <!-- Mobile Carousel (Visible on sm and smaller screens) -->
-            <div id="galleryCarouselMobile" class="carousel slide d-block d-md-none" data-bs-ride="carousel" data-aos="fade-up">
+            <!-- Gallery Carousel -->
+            <div id="galleryCarousel" class="carousel slide" data-bs-ride="carousel" data-aos="fade-up">
                 <div class="carousel-inner">
                     <!-- Gallery Image 1 -->
                     <div class="carousel-item active">
-                        <a href="assets/images/galeri1.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                            <img src="assets/images/galeri1.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 1">
-                        </a>
+                        <img src="assets/images/galeri1.jpg" class="d-block w-100 img-fluid rounded shadow-lg" alt="Gallery 1">
                     </div>
                     <!-- Gallery Image 2 -->
                     <div class="carousel-item">
-                        <a href="assets/images/galeri2.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                            <img src="assets/images/galeri2.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 2">
-                        </a>
+                        <img src="assets/images/galeri2.jpg" class="d-block w-100 img-fluid rounded shadow-lg" alt="Gallery 2">
                     </div>
                     <!-- Gallery Image 3 -->
                     <div class="carousel-item">
-                        <a href="assets/images/galeri3.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                            <img src="assets/images/galeri3.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 3">
-                        </a>
+                        <img src="assets/images/galeri3.jpg" class="d-block w-100 img-fluid rounded shadow-lg" alt="Gallery 3">
                     </div>
-                    <!-- Gallery Image 4 -->
-                    <div class="carousel-item">
-                        <a href="assets/images/galeri4.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                            <img src="assets/images/galeri4.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 4">
-                        </a>
-                    </div>
-                    <!-- Gallery Image 5 -->
-                    <div class="carousel-item">
-                        <a href="assets/images/galeri5.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                            <img src="assets/images/galeri5.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 5">
-                        </a>
-                    </div>
-                    <!-- Gallery Image 6 -->
-                    <div class="carousel-item">
-                        <a href="assets/images/galeri6.jpg" data-bs-toggle="modal" data-bs-target="#imageModal" class="gallery-link">
-                            <img src="assets/images/galeri6.jpg" class="img-fluid rounded shadow-lg" alt="Gallery 6">
-                        </a>
-                    </div>
-                    <!-- Add more carousel items as needed -->
+                    <!-- Add more images as needed -->
                 </div>
+
                 <!-- Carousel Controls -->
-                <button class="carousel-control-prev carousel-control" type="button" data-bs-target="#galleryCarouselMobile" data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <button class="carousel-control-prev" type="button" data-bs-target="#galleryCarousel" data-bs-slide="prev">
+                    <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" viewBox="0 0 24 24">
+                            <path d="M15.41 16.58L10.83 12l4.58-4.59L14 6l-6 6 6 6z" />
+                        </svg>
+                    </span>
                     <span class="visually-hidden">Önceki</span>
                 </button>
-                <button class="carousel-control-next carousel-control" type="button" data-bs-target="#galleryCarouselMobile" data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <button class="carousel-control-next" type="button" data-bs-target="#galleryCarousel" data-bs-slide="next">
+                    <span aria-hidden="true">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="white" viewBox="0 0 24 24">
+                            <path d="M8.59 16.58L13.17 12l-4.58-4.59L10 6l6 6-6 6z" />
+                        </svg>
+                    </span>
                     <span class="visually-hidden">Sonraki</span>
                 </button>
             </div>
         </div>
     </section>
-
+    
     <style>
-        /* Gallery Section Styles */
-        #galleryCarouselDesktop,
-        #galleryCarouselMobile {
+        /* Gallery Carousel Styles */
+        #galleryCarousel {
             position: relative;
             width: 100%;
             max-width: 800px;
             margin: 0 auto;
             border-radius: 10px;
-        }
-
-        #galleryCarouselDesktop .carousel-inner,
-        #galleryCarouselMobile .carousel-inner {
-            position: relative;
-            width: 100%;
-            border-radius: 10px;
             overflow: hidden;
         }
-
-        #galleryCarouselDesktop .carousel-item,
-        #galleryCarouselMobile .carousel-item {
-            position: relative;
+    
+        #galleryCarousel .carousel-inner {
             width: 100%;
+            border-radius: 10px;
         }
-
-        #galleryCarouselDesktop .carousel-item img,
-        #galleryCarouselMobile .carousel-item img {
+    
+        #galleryCarousel .carousel-item img {
             width: 100%;
             height: auto;
             object-fit: cover;
             transition: transform 0.3s ease-in-out;
         }
-
-        /* Control buttons styling */
-        .carousel-control {
+    
+        /* Control Buttons Styling */
+        #galleryCarousel .carousel-control-prev,
+        #galleryCarousel .carousel-control-next {
             position: absolute;
             top: 50%;
             transform: translateY(-50%);
-            width: 40px;
-            height: 40px;
-            background-color: rgba(0, 0, 0, 0.5);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.7);
             border-radius: 50%;
-            opacity: 0.8;
             border: 2px solid white;
             z-index: 10;
             display: flex;
             align-items: center;
             justify-content: center;
-            cursor: pointer;
         }
-
-        .carousel-control:hover {
-            background-color: rgba(0, 0, 0, 0.8);
-            opacity: 1;
+    
+        #galleryCarousel .carousel-control-prev:hover,
+        #galleryCarousel .carousel-control-next:hover {
+            background-color: rgba(255, 255, 255, 0.8);
+            color: black;
         }
-
-        .carousel-control-prev {
+    
+        #galleryCarousel .carousel-control svg {
+            transition: transform 0.3s ease;
+        }
+    
+        #galleryCarousel .carousel-control:hover svg {
+            transform: scale(1.2);
+        }
+    
+        #galleryCarousel .carousel-control-prev {
             left: 10px;
         }
-
-        .carousel-control-next {
+    
+        #galleryCarousel .carousel-control-next {
             right: 10px;
         }
-
-        .carousel-control-prev-icon,
-        .carousel-control-next-icon {
-            width: 20px;
-            height: 20px;
-            background-size: 100%;
-            background-repeat: no-repeat;
-            background-position: center;
-        }
-
-        /* Override Bootstrap default icons if needed */
-        .carousel-control-prev-icon {
-            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23ffffff" viewBox="0 0 8 8"%3E%3Cpath d="M5.5 0L4.207 1.293 6.414 3.5H0v1h6.414L4.207 6.707 5.5 8l4-4-4-4z"/%3E%3C/svg%3E');
-        }
-
-        .carousel-control-next-icon {
-            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg xmlns="http://www.w3.org/2000/svg" fill="%23ffffff" viewBox="0 0 8 8"%3E%3Cpath d="M2.5 0L1.207 1.293 3.414 3.5H0v1h3.414L1.207 6.707 2.5 8l4-4-4-4z"/%3E%3C/svg%3E');
-        }
-
-        /* Responsive adjustments for both carousels */
+    
         @media (max-width: 768px) {
-            #galleryCarouselDesktop {
-                display: none;
-            }
-
-            #galleryCarouselMobile {
+            #galleryCarousel {
                 max-width: 100%;
             }
-
-            .carousel-control {
-                width: 35px;
-                height: 35px;
-            }
-
-            .carousel-control-prev-icon,
-            .carousel-control-next-icon {
-                width: 15px;
-                height: 15px;
+    
+            #galleryCarousel .carousel-control {
+                width: 40px;
+                height: 40px;
             }
         }
     </style>
@@ -1080,7 +1029,7 @@
             </h2>
             <div class="row">
                 <div class="col-md-6" data-aos="fade-right">
-                    <div class="home-qa p-4 bg-light rounded shadow-lg">
+                    <div class="home-qa p-4 bg-light rounded custom-shadow">
                         <h3 class="display-6" style="color: #000000; font-weight: bold;">Firmamızın Özellikleri</h3>
                         <ul>
                             <li style="color: #3d4246;">
@@ -1099,7 +1048,7 @@
                     </div>
                 </div>
                 <div class="col-md-6" data-aos="fade-left">
-                    <div class="home-qa p-4 bg-light rounded shadow-lg">
+                    <div class="home-qa p-4 bg-light rounded custom-shadow">
                         <h3 class="display-6" style="color: #000000; font-weight: bold;">Ürün ve Hizmetlerimiz</h3>
                         <ul>
                             <li style="color: #3d4246;">
@@ -1121,7 +1070,7 @@
             <!-- Neden Öz Yarka Bölümü -->
             <div class="row mt-5">
                 <div class="col-12" data-aos="fade-up">
-                    <div class="home-qa p-4 bg-light rounded shadow-lg">
+                    <div class="home-qa p-4 bg-light rounded custom-shadow">
                         <h3 class="display-6" style="color: #000000; font-weight: bold;">PEKİ NEDEN? ÖZ YARKA</h3>
                         <ul>
                             <li style="color: #3d4246;">
@@ -1146,16 +1095,22 @@
             <!-- Sektörde Biz Bölümü -->
             <div class="row mt-5">
                 <div class="col-12" data-aos="fade-up">
-                    <div class="home-qa p-4 bg-light rounded shadow-lg">
+                    <div class="home-qa p-4 bg-light rounded custom-shadow">
                         <h3 class="display-6" style="color: #000000; font-weight: bold;">SEKTÖRDE BİZ</h3>
-                        <p style="color: #3d4246;">
-                            Firmamız uzun yıllardır sektörde olup Türkiye’nin her bölgesine tavuk teslimatı ve tavuk kümesi kurulumu yapmış olup, sayısız müşteri memnuniyetine sahiptir. Devlet kontrollü, ziraat onaylı, 200 bin kapasiteye sahip modern ve son derece profesyonel üretim tesislerimizde; uzman kümes kurulum ekipleri, veteriner hekimlerimiz, satış temsilcilerimiz ve üretime yardımcı olan birçok profesyonel ekiple Türkiye’nin her ilinde, ilçesinde ve köyünde üretimini yaptığımız yarkaların yumurtalarını alıp tüketiciye ulaştırıyoruz. Saygıdeğer müşterilerimizle birlikte Türkiye'nin tek tescilli markası olan büyük bir aileyiz.
+                        <p style="color: #3d4246; font-family: 'Merriweather', serif;">
+                            Firmamız uzun yıllardır sektörde olup Türkiye’nin her bölgesine tavuk teslimatı ve tavuk kümesi kurulumu yapmış olup, sayısız müşteri memnuniyetine sahiptir. Devlet kontrollü, ziraat onaylı, 200 bin kapasiteye sahip modern ve son derece profesyonel üretim tesislerimizde; uzman kümes kurulum ekipleri, veteriner hekimlerimiz, satış temsilcilerimiz ve üretime yardımcı olan birçok profesyonel ekiple Türkiye’nin her ilinde, ilçesinde ve köyünde üretimini yaptığımız yarkaların yumurtalarını alıp tüketiciye ulaştırıyoruz. Saygıdeğer müşterilerimizle birlikte Türkiye'nın tek tescilli markası olan büyük bir aileyiz.
                         </p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+    <style>
+        .custom-shadow {
+            box-shadow: 0 0 30px 5px rgba(0, 0, 0, 0.2), 0 0 60px rgba(0, 0, 0, 0.1);
+        }
+    </style>
     
     <!-- Contact Section -->
     <section id="contact" class="bg-light">
@@ -1180,6 +1135,7 @@
             </div>
         </div>
     </section>
+
 
     <!-- Footer -->
     <footer class="text-center py-3">
