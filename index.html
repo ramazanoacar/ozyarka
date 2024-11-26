@@ -587,12 +587,30 @@
     <section id="logo" class="bg-light py-5">
         <div class="container text-center">
             <div class="card mx-auto" style="max-width: 600px; background-color: #041425; border-radius: 10px;">
-                <div class="card-body">
-                    <img src="assets/images/file.png" alt="Logo" class="img-fluid" style="max-width: 500px;">
+                <div class="card-body d-flex justify-content-center align-items-center">
+                    <img src="assets/images/file.png" alt="Logo" class="img-fluid" style="max-width: 100%; height: auto;">
                 </div>
             </div>
         </div>
     </section>
+
+    <style>
+        @media (max-width: 768px) {
+            #logo .card {
+                max-width: 100%;
+                margin: 0 auto;
+            }
+
+            #logo .card-body {
+                padding: 20px;
+            }
+
+            #logo img {
+                max-width: 100%;
+                height: auto;
+            }
+        }
+    </style>
     <section id="hizmetlerimiz" class="bg-light py-5">
         <div class="container">
             <h2 class="text-center mb-5" data-aos="fade-up" style="font-family: 'Montserrat', sans-serif; font-weight: bold; color: #333;">Hizmetlerimiz</h2>
@@ -639,7 +657,7 @@
                                data-image="assets/images/tavuk1.jpg"
                                data-description="  • Beyaz renkli olup siyah çizgi tüylere sahiptir.<br>
                                                    • Her iklime uygundur.<br>
-                                                   <p>• Senelik yumurta verimi 340 adete kadar yükselebilmektedir.</p>
+                                                   • Senelik yumurta verimi 340 adete kadar yükselebilmektedir.<br>
                                                    • 20. haftasında ilk yumurtalarını yapmaya başlarlar.<br>
                                                    • Yumurta rengi kremdir.<br>
                                                    • Müşteri kümeslerimize teslimatları ortalama 16. haftasında son 4'lü karma aşısı yapıldıktan sonra gerçekleşir.">Detaylar</a>
@@ -661,7 +679,14 @@
                                data-bs-target="#productModal"
                                data-title="LOHMAN BROWN"
                                data-image="assets/images/tavuk2.jpg"
-                               data-description="Bu, Ürün 2'nin detaylı açıklamasıdır. Ürünün özellikleri, boyutları ve diğer bilgiler burada yer alabilir.">Detaylar</a>
+                               data-description="  • Kırmızı renkli tavuktur.<br>
+                                                   • Ilıman iklim şartlarında yetiştirilmesi uygundur.<br>
+                                                   • Senelik yumurta verimi 320 adete kadar çıkabilmektedir.<br>
+                                                   • Günlük yem tüketimi 100-110 gramdır.<br>
+                                                   • Gezen tavuktur.<br>
+                                                   • 20-21. haftasında ilk yumurtalarını yapmaya başlarlar.<br>
+                                                   • Yumurta rengi kahverengidir.<br>
+                                                   • Müşteri kümeslerimize teslimatları ortalama 16. haftasında son 4'lü karma aşısı yapıldıktan sonra gerçekleşir.">Detaylar</a>
                         </div>
                     </div>
                 </div>
@@ -678,7 +703,13 @@
                                data-bs-target="#productModal"
                                data-title="LOHMAN SANDY"
                                data-image="assets/images/tavuk3.jpg"
-                               data-description="Bu, Ürün 3'ün detaylı açıklamasıdır. Ürünün özellikleri, boyutları ve diğer bilgiler burada yer alabilir.">Detaylar</a>
+                               data-description="  • Beyaz renkli olup siyah noktalara sahiptir.<br>
+                                                   • Her türlü iklime uygundur.<br>
+                                                   • Senelik yumurta verimi 340 adete kadar çıkabilmektedir.<br>
+                                                   • Gezen ve kafes sistemi için uygundur.<br>
+                                                   • Genellikle 20. haftasında yumurtlamaya başlarlar.<br>
+                                                   • Yumurta rengi kremdir.<br>
+                                                   • Müşteri kümeslerimize teslimatları ortalama 16. haftasında son 4'lü karma aşısı yapıldıktan sonra gerçekleşir.">Detaylar</a>
                         </div>
                     </div>
                 </div>
@@ -698,7 +729,36 @@
                                data-bs-target="#productModal"
                                data-title="ATAK-S"
                                data-image="assets/images/tavuk4.jpg"
-                               data-description="Bu, Ürün 3'ün detaylı açıklamasıdır. Ürünün özellikleri, boyutları ve diğer bilgiler burada yer alabilir.">Detaylar</a>
+                               data-description="  • Yerli hayvan olarak bilinen siyah renkli yarkamız.<br>
+                                                   • Soğuk hava şartlarına dayanıklı olup kışı sert geçen bölgelerimize önerdiğimiz bir cinstir.<br>
+                                                   • Senelik yumurta verimi 260-300 adet arasındadır.<br>
+                                                   • Günlük yem tüketimi 100 gram-150 gram arasında değişir.<br>
+                                                   • Gezen tavuktur.<br>
+                                                   • 20.-21. haftasında ilk yumurtalarını yapmaya başlarlar.<br>
+                                                   • Yumurta rengi kapalı krem renktir.<br>
+                                                   • Müşteri kümeslerimize teslimatları ortalama 16. haftasında son 4'lü karma aşısı yapıldıktan sonra gerçekleşir.">Detaylar</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Product Card 5 -->
+                <div class="col-md-4" data-aos="zoom-in">
+                    <div class="card mb-4">
+                        <img src="assets/images/tavuk4.jpg" class="card-img-top product-image" alt="Product 3">
+                        <div class="card-body">
+                            <h5 class="card-title">İSA TINTED</h5>
+                            <!-- <p class="card-text">Ürün 3 açıklaması.</p> -->
+                            <a href="#" class="btn btn-primary" 
+                               data-bs-toggle="modal" 
+                               data-bs-target="#productModal"
+                               data-title="ATAK-S"
+                               data-image="assets/images/tavuk4.jpg"
+                               data-description="  • Beyaz tavuktur.<br>
+                                                   • Her türlü iklime uygundur.<br>
+                                                   • Senelik yumurta verimi 320-330 adetlere kadar yükselmektedir.<br>
+                                                   • Yumurta rengi kremdir.<br>
+                                                   • 20. haftasında ilk yumurtalarını yapmaya başlarlar.<br>
+                                                   • Müşteri kümeslerimize teslimatları ortalama 16. haftasında son 4'lü karma aşısı yapıldıktan sonra gerçekleşir.">Detaylar</a>
                         </div>
                     </div>
                 </div>
@@ -755,45 +815,90 @@
                 <div class="col-md-4" data-aos="zoom-in">
                     <div class="card mb-4">
                         <img src="assets/images/urun1.jpg" class="card-img-top product-image" alt="Product 1">
-                        <div class="card-body">
+                        <div class="card-body text-center">
                             <h5 class="card-title">2.000 ADET KAPASİTELİ ÇADIR KÜMES PAKETİMİZ</h5>
-                            <!-- <p class="card-text">Ürün 1 açıklaması.</p> -->
+                        </div>
+                        <!-- Description below the image -->
+                        <div class="card-footer bg-light">
+                            <p class="card-text">• 2.000 adet tavuk<br>
+                                                • 250 m² profil iskelet sistemi<br>
+                                                • Özel Antibakteriyel astar<br>
+                                                • Antibakteriyel yanmaz alev geçirmez branda<br>
+                                                • Otomatik yemleme sistemi dahil<br>
+                                                • Sulama sistemi dahil<br>
+                                                • 10 yıl garanti süresi<br>
+                                                • A’dan Z’ye kurulum hizmeti</p>
                             <a href="#" class="btn btn-primary" 
                                data-bs-toggle="modal" 
                                data-bs-target="#productModal"
                                data-title="2.000 ADET KAPASİTELİ ÇADIR KÜMES PAKETİMİZ"
                                data-image="assets/images/urun1.jpg"
-                               data-description="• Kapasite: 2.000 adet tavuk<br>
-                                                • Çadır boyutları: 10x25 metre<br>
-                                                • Otomatik yemleme sistemi dahil<br>
-                                                • Sulama sistemi dahil<br>
-                                                • Hava sirkülasyon sistemi dahil<br>
-                                                • 5 yıl garanti süresi<br>
-                                                • A’dan Z’ye kurulum hizmeti">Detaylar</a>
+                               data-description="• Fan<br>
+                               • Sulama sistemi<br>
+                               • Yemlik sistemi<br>
+                               • Erozyon sistemi<br>
+                               • Isı ölçerler<br>
+                               • Nem ölçerler<br>
+                               • Suluk ağzı damlama şamandıra takımları<br>
+                               • Yem tabakları<br>
+                               • İsteğe bağlı tavuk tünekleri<br>
+                               • İsteğe bağlı akıllı folluklar<br>
+                               • Hava bombaları<br>
+                               • Taşıma boruları<br>
+                               • Şoklama<br>
+                               • Hat başları hat sonları<br>
+                               • Aktarma grupları<br>
+                               • Kaldırma indirme halatları<br>">Detaylar</a>
                         </div>
                     </div>
                 </div>
                 
 
                 <!-- Product Card 2 -->
-                <div class="col-md-4" data-aos="zoom-in" data-aos-delay="100">
+                <div class="col-md-4" data-aos="zoom-in">
                     <div class="card mb-4">
-                        <img src="assets/images/urun2.jpg" class="card-img-top product-image" alt="Product 2">
-                        <div class="card-body">
+                        <img src="assets/images/urun1.jpg" class="card-img-top product-image" alt="Product 1">
+                        <div class="card-body text-center">
                             <h5 class="card-title">4.000 ADET KAPASİTELİ ÇADIR KÜMES PAKETİMİZ</h5>
-                            <!-- <p class="card-text">Ürün 2 açıklaması.</p> -->
+                        </div>
+                        <!-- Description below the image -->
+                        <div class="card-footer bg-light">
+                            <p class="card-text">• 4.000 adet tavuk<br>
+                                                • 500 m² profil iskelet sistemi<br>
+                                                • Özel Antibakteriyel astar<br>
+                                                • Antibakteriyel yanmaz alev geçirmez branda<br>
+                                                • Otomatik yemleme sistemi dahil<br>
+                                                • Sulama sistemi dahil<br>
+                                                • 10 yıl garanti süresi<br>
+                                                • A’dan Z’ye kurulum hizmeti</p>
                             <a href="#" class="btn btn-primary" 
                                data-bs-toggle="modal" 
                                data-bs-target="#productModal"
                                data-title="4.000 ADET KAPASİTELİ ÇADIR KÜMES PAKETİMİZ"
-                               data-image="assets/images/urun2.jpg"
-                               data-description="Bu, Ürün 2'nin detaylı açıklamasıdır. Ürünün özellikleri, boyutları ve diğer bilgiler burada yer alabilir.">Detaylar</a>
+                               data-image="assets/images/urun1.jpg"
+                               data-description="• Fan<br>
+                               • Sulama sistemi<br>
+                               • Yemlik sistemi<br>
+                               • Erozyon sistemi<br>
+                               • Isı ölçerler<br>
+                               • Nem ölçerler<br>
+                               • Suluk ağzı damlama şamandıra takımları<br>
+                               • Yem tabakları<br>
+                               • İsteğe bağlı tavuk tünekleri<br>
+                               • İsteğe bağlı akıllı folluklar<br>
+                               • Hava bombaları<br>
+                               • Taşıma boruları<br>
+                               • Şoklama<br>
+                               • Hat başları hat sonları<br>
+                               • Aktarma grupları<br>
+                               • Kaldırma indirme halatları<br>">Detaylar</a>
                         </div>
                     </div>
                 </div>
 
             </div>
         </div>
+
 
         <!-- Single Modal -->
         <div class="modal fade" id="productModal" tabindex="-1" aria-labelledby="productModalLabel" aria-hidden="true">
@@ -805,9 +910,13 @@
                     </div>
                     <div class="modal-body">
                         <div class="text-center">
+                            <!-- Product image -->
                             <img src="" id="productModalImage" class="img-fluid" alt="Product Image" style="max-height: 70vh; object-fit: contain;">
                         </div>
-                        <p class="mt-3" id="productModalDescription">Ürün açıklaması burada yer alacak.</p>
+                        <!-- Description below the image -->
+                        <div class="mt-4">
+                            <p id="productModalDescription" style="text-align: justify;">Ürün açıklaması burada yer alacak.</p>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Kapat</button>
@@ -822,6 +931,37 @@
             width: 100%;
             height: 200px; /* Fixed height for all product images */
             object-fit: cover; /* Ensures images cover the area without distortion */
+        }
+        .card-footer {
+            text-align: center;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            padding: 10px;
+            color: #333;
+        }
+
+        .card-footer .btn {
+            margin-top: 10px;
+        }
+
+        .modal-body {
+            padding: 20px;
+        }
+
+        #productModalImage {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            margin: 0 auto;
+        }
+
+        #productModalDescription {
+            margin-top: 20px;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #333;
+            text-align: justify;
         }
     </style>
 
