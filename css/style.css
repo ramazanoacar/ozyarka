@@ -582,6 +582,18 @@ ul.email li i {
     transition: ease-in all 0.5s;
 }
 
+.about_img .embed-responsive {
+    border-radius: 5px;
+    overflow: hidden;
+    box-shadow: 0 0 38px rgba(2, 3, 8, 0.14);
+}
+
+.about_img video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
 
 /** end about section **/
 
