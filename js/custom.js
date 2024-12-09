@@ -125,16 +125,7 @@ $(document).ready(function () {
 
 /* select flag js */
 
-function onChangeCallback(ctr) {
-  console.log("The country was changed: " + ctr);
-  //$("#selectionSpan").text(ctr);
-}
 
-$(document).ready(function () {
-  $(".niceCountryInputSelector").each(function (i, e) {
-    new NiceCountryInput(e).init();
-  });
-});
 
 
 var _gaq = _gaq || [];
